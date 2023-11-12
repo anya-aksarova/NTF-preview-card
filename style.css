@@ -1,0 +1,153 @@
+/*GLOBAL VARIABLES*/
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyan-overlay: hsla(178, 100%, 50%, 45%);
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+/*CORE STYLES*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 1.4rem;
+    background-color: var(--main-bg);
+}
+
+/*MAIN WRAPPER*/
+.equilibrium {
+    width: 375px;
+    padding: 1.3rem;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 50px -12px hsl(0, 0%, 0%);
+}
+
+/*CARDS ELEMENTS*/
+
+/* VERY IMPORTNAT*/
+/*images and hover states*/
+.equilibrium__photo-wrapper {
+    /*needs relative postion for the overlay 
+    div to be positioned inside it absolutely 
+    to it (not the body or card container*/
+    position: relative;
+    width: 100%;
+}
+
+.equilibrium__photo {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.equilibrium__view-icon {
+    /*position the icon in the center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*positioning the div directly above the 
+    main imagine by setting div's position to
+    absolute and the photo container to relative*/
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cyan-overlay);
+    /*make it transparent*/
+    opacity: 0;
+    border-radius: 1rem;
+    /*make hover run smooth*/
+    transition: 0.8s ease-in-out;
+}
+
+.equilibrium__view-icon:hover {
+    /*make div visible on hover*/
+    opacity: 1;
+    cursor: pointer;
+}
+
+.equilibrium__header {
+    padding: 1rem;
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 85%;
+    transition: 1s ease-in-out;
+}
+
+.equilibrium__info {
+    color: var(--soft-blue);
+    opacity: 70%;
+    line-height: 1.5;
+}
+
+/*FLEX WRAPPERS*/
+.equilibrium__points {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.equilibrium__points-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*FLEX WRAPPERS ELEMENTS*/
+.equilibrum__eth {
+    margin-left: 0.4rem;
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+.equilibrium__days {
+    margin-left: 0.4rem;
+    color: var(--soft-blue);
+    opacity: 70%;
+}
+
+/*FOOTER*/
+.equilibrium__footer {
+    display: flex;
+    padding: 1rem 0;
+    word-spacing: 3px;
+    color: var(--soft-blue);
+    border-top: 1px solid var(--line);
+}
+
+.equilibrium__footer img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.8rem;
+    border-radius: 50%;;
+    border: 1px solid white;
+}
+
+.equilibrium__footer a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.8s ease-in-out;
+}
+
+/*MODIFIERS*/
+.equilibrium--hover:hover {
+    color: var(--cyan);
+}
+
+
